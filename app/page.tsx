@@ -1,33 +1,28 @@
-import { CountdownTimer } from "@/components/countdown-timer"
-import ConvertKitForm from "@/components/convertkit-form"
-import { Instagram } from 'lucide-react'
-import Image from "next/image"
-import { Metadata } from "next"
+"use client"
 
-export const metadata: Metadata = {
-  title: "CARSTARZ - Digital Vehicle Registry & Owners Club",
-  description: "A digital vehicle registry and owners club for enthusiasts and collectors based on authenticity and curated car culture.",
-  keywords: ["car registry", "vehicle registry", "car enthusiasts", "car collectors", "car culture"],
-  openGraph: {
-    title: "CARSTARZ - Digital Vehicle Registry & Owners Club",
-    description: "A digital vehicle registry and owners club for enthusiasts and collectors based on authenticity and curated car culture.",
-    type: "website",
-    images: ["/CARSTARZhorzwhite.svg"],
-  },
-}
+import { useState } from "react"
+import { CountdownTimer } from "@/components/countdown-timer"
+import { Instagram } from "lucide-react"
+import Image from "next/image"
+import { LaunchModal } from "@/components/launch-modal"
 
 export default function ComingSoonPage() {
+  const [showModal, setShowModal] = useState(false)
+
   return (
-    <div 
-      className="flex min-h-screen flex-col items-center justify-center bg-black text-white p-4"
+    <div
+      className="relative flex min-h-screen flex-col items-center justify-center bg-black text-white p-4"
       role="main"
     >
-      <div className="w-full max-w-3xl mx-auto text-center space-y-8">
-        {/* Logo section */}
-        <div className="flex justify-center mt-12 mb-16">
+      <LaunchModal showModal={showModal} setShowModal={setShowModal} />
+
+      {/* Page content */}
+      <div className="w-full max-w-3xl mx-auto text-center space-y-12">
+        {/* Logo */}
+        <div className="flex justify-center mt-12">
           <div className="w-[77%]">
             <Image
-              src="/CARSTARZhorzwhite.svg?height=150&width=400"
+              src="/CARSTARZhorzwhite.svg"
               width={400}
               height={150}
               alt="CARSTARZ Logo"
@@ -37,41 +32,43 @@ export default function ComingSoonPage() {
             />
           </div>
         </div>
-        
-        <div className="space-y-2">
-          <h1 className="text-4xl md:text-6xl font-bold tracking-tighter">Coming Soon</h1>
-          <p className="text-lg md:text-xl text-slate-300 max-w-xl mx-auto">
-            CARSTARZ is a digital vehicle registry and owners club for enthusiasts and collectors based on authenticity and curated car culture.
-          </p>
-        </div>
 
-        <CountdownTimer targetDate="2025-06-15T00:00:00" />
-
-        <div 
-          className="bg-white/10 backdrop-blur-sm rounded-xl p-6 md:p-8 space-y-4 max-w-xl mx-auto"
-          role="region"
-          aria-label="Launch notification signup"
-        >
-          <h2 className="text-2xl font-semibold">Get Notified When We Launch</h2>
-          <p className="text-slate-300">Be the first to know when we go live. No spam, just a friendly update.</p>
-          <div className="relative">
-            <ConvertKitForm />
+        {/* Headline, Description, and Signup */}
+        <div className="space-y-6 max-w-xl mx-auto">
+          <div className="space-y-2">
+            <h1 className="text-4xl md:text-6xl font-bold tracking-tighter">Coming Soon</h1>
+            <p className="text-lg md:text-xl text-slate-300">
+              A digital vehicle registry and owners club for enthusiasts and collectors.
+            </p>
           </div>
-        </div>
-        
-        <footer className="pt-8 text-slate-400">
-          <div className="flex justify-center space-x-6">
-            <a
-              href="https://instagram.com/carstarz_io"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-white transition-colors flex items-center focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black rounded-full"
-              aria-label="Follow us on Instagram"
+          <CountdownTimer targetDate="2025-06-15T00:00:00" />
+          
+          {/* Join Waitlist Button */}
+          <div className="pt-4">
+            <button
+              onClick={() => setShowModal(true)}
+              className="inline-block bg-white text-black text-lg font-semibold px-6 py-3 rounded-full shadow-md hover:bg-slate-100 transition"
             >
-              <Instagram className="w-20 h-20" />
-            </a>
+              Join Waitlist
+            </button>
           </div>
-          <p className="mt-4">© {new Date().getFullYear()} CARSTARZ. All rights reserved.</p>
+        </div>
+
+        {/* Social Links */}
+        <div className="flex justify-center">
+          <a
+            href="https://www.instagram.com/carstarz_io"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white hover:text-slate-300 transition"
+          >
+            <Instagram className="w-6 h-6" />
+          </a>
+        </div>
+
+        {/* Footer */}
+        <footer className="pt-8 text-slate-400">
+          <p>© {new Date().getFullYear()} CARSTARZ. All rights reserved.</p>
         </footer>
       </div>
     </div>
