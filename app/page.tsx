@@ -20,19 +20,19 @@ export default function ComingSoonPage() {
         <LaunchModal showModal={showModal} setShowModal={setShowModal} />
 
         {/* Launch App Button - Top Right */}
-        <div className="absolute top-4 right-4">
+        <div className="absolute top-4 right-4 z-50">
           <button
             onClick={() => setShowModal(true)}
-            className="inline-flex items-center gap-2 bg-gradient-to-r from-[#D70000] to-[#FF4B2B] text-white text-lg font-semibold px-6 py-3 rounded-full shadow-md hover:shadow-[0_0_15px_#D70000] transition-all duration-300"
+            className="inline-flex items-center gap-2 bg-gradient-to-r from-[#D70000] to-[#FF4B2B] text-white text-sm md:text-lg font-semibold px-4 md:px-6 py-2 md:py-3 rounded-full shadow-md hover:shadow-[0_0_15px_#D70000] transition-all duration-300"
           >
-            <Rocket className="w-5 h-5" />
+            <Rocket className="w-4 h-4 md:w-5 md:h-5" />
             Launch App
           </button>
         </div>
 
         <div className="w-full max-w-3xl mx-auto text-center space-y-8 md:space-y-12">
           {/* Logo */}
-          <div className="flex justify-center mt-8">
+          <div className="flex justify-center mt-16 md:mt-12">
             <div className="w-[77%] backdrop-blur-sm bg-[#0f0f0f]/80 rounded-2xl p-6">
               <Image
                 src="/CARSTARZhorzwhite.svg"
