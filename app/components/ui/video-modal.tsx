@@ -56,7 +56,7 @@ export function VideoModal({ isOpen, onClose, videoUrl }: VideoModalProps) {
           playsInline
           muted // Ensures autoplay works on mobile
           preload="metadata"
-          poster="/thumbnails/APPvideo THUMBPOSTER.png"
+          poster="/thumbnails/CARSTARSProfileThumbPoster.png"
         />
       </div>
     </div>

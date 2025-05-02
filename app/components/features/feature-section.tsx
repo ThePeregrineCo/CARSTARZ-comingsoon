@@ -35,9 +35,18 @@ export function FeatureSection({ title, videoSrc, features }: FeatureSectionProp
   // Video Events
   const handlePlay = () => {
     if (videoRef.current) {
-      videoRef.current.play()
-      setIsPlaying(true)
-      showControlsWithTimeout()
+      const playPromise = videoRef.current.play()
+      if (playPromise !== undefined) {
+        playPromise
+          .then(() => {
+            setIsPlaying(true)
+            showControlsWithTimeout()
+          })
+          .catch(error => {
+            console.error("Error playing video:", error)
+            setIsPlaying(false)
+          })
+      }
     }
   }
 
@@ -46,6 +55,17 @@ export function FeatureSection({ title, videoSrc, features }: FeatureSectionProp
       videoRef.current.pause()
       setIsPlaying(false)
       setShowControls(true)
+      if (controlsTimeout.current) {
+        clearTimeout(controlsTimeout.current)
+      }
+    }
+  }
+
+  const handleEnded = () => {
+    setIsPlaying(false)
+    setShowControls(true)
+    if (videoRef.current) {
+      videoRef.current.currentTime = 0
     }
   }
 
@@ -118,11 +138,11 @@ export function FeatureSection({ title, videoSrc, features }: FeatureSectionProp
               src={videoSrc}
               className="w-full h-full object-cover"
               muted={isMuted}
-              loop
               playsInline
               preload="metadata"
-              poster="/thumbnails/APPvideo THUMBPOSTER.png"
+              poster="/thumbnails/CARSTARSProfileThumbPoster.png"
               onTimeUpdate={handleTimeUpdate}
+              onEnded={handleEnded}
               onLoadedMetadata={() => {
                 if (videoRef.current) {
                   setDuration(videoRef.current.duration)
