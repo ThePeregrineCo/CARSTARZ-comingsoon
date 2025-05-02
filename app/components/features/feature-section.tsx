@@ -28,7 +28,7 @@ export function FeatureSection({ title, videoSrc, features }: FeatureSectionProp
     if (isPlaying) {
       controlsTimeout.current = window.setTimeout(() => {
         setShowControls(false)
-      }, 3000)
+      }, 1500) // 1.5 seconds
     }
   }
 

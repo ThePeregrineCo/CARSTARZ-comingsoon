@@ -65,11 +65,10 @@ export default function ComingSoonPage() {
                 videoSrc="/demos/CARSTARZ DEMO v2_SM.mp4"
                 features={[
                   "Claim your vehicle to create a unique ID and permanent, media rich, profile page",
+                  "Showcase your vehicle and partnerships from any social platforms",
                   "Add secure attestations from licensed appraisers, builders, and restylers",
                   "Use verifiable trust for insurance or supporting vehicle sale",
                   "Research top service providers and products",
-                  "Showcase your vehicle and partnerships from any social platforms",
-                  
                 ]}
               />
             </div>
