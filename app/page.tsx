@@ -64,15 +64,14 @@ export default function ComingSoonPage() {
                 title="CARSTARZ Highlights"
                 videoSrc="/demos/CARSTARZ DEMO v2_SM.mp4"
                 features={[
-                  "Claim your vehicle to create a unique ID and permanent profile page",
-                  "Showcase your vehicle and partnerships across all social platforms",
-                  "Add cryptographically secure attestations from licensed appraisers",
-                  "Use verifiable trust for insurance or supporting vehicle sales",
-                  "Enjoy algorithm-free social feeds curated by categories",
+                  "Claim your vehicle to create a unique ID and permanent, media rich, profile page",
+                  "Add secure attestations from licensed appraisers, builders, and restylers",
+                  "Use verifiable trust for insurance or supporting vehicle sale",
+                  "Research top service providers and products",
+                  "Showcase your vehicle and partnerships from any social platforms",
+                  "Enjoy algorithm-free currated content feeds by categories",
                   "Join private owner channels and IRL Car Clubs",
-                  "Access end-to-end encrypted messaging between users",
-                  "",
-                  "Research top service providers and products"
+                  "Access end-to-end encrypted messaging between users"
                 ]}
               />
             </div>
