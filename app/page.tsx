@@ -69,9 +69,7 @@ export default function ComingSoonPage() {
                   "Use verifiable trust for insurance or supporting vehicle sale",
                   "Research top service providers and products",
                   "Showcase your vehicle and partnerships from any social platforms",
-                  "Enjoy algorithm-free currated content feeds by categories",
-                  "Join private owner channels and IRL Car Clubs",
-                  "Access end-to-end encrypted messaging between users"
+                  
                 ]}
               />
             </div>
